@@ -1,0 +1,140 @@
+/* Font and Design */
+
+BODY {
+	background: url('img/backgroundGradient.gif') #FFDF97 repeat-x top left;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 100%;
+}
+#restart {
+	cursor:pointer;
+}
+.popText {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#quickStats {
+	color: #3A2100;
+	font-size: 0.65em;
+}
+#rotation {
+color: #FFFFFF;
+	font-size: 0.65em;
+}
+
+.gameWindow {
+	color: #FFFFFF;
+	background: url('img/gameWindowGradient.gif') #7B4C06 repeat-x bottom left;
+}
+.gameWindow h2 {
+	font-size: 1.5em;
+	margin: 1em;
+	margin: 5px;
+}
+.gameWindow h3 {
+	ont-size: 1em;
+	margin: 5px;
+}
+.gameWindow ul, .gameWindow p, input[type=button], td {
+	font-size: 0.6em;
+}
+input[type=button] {
+	margin-left: 10px;
+	font-family: "Courier New", Courier, monospace;
+}
+.gameWindow input[type=checkbox] 
+ 	height: 0.5em;
+	width: 0.5em;
+	margin: 0;
+ }
+.gameWindow .smaller {
+	font-size: 0.55em;
+}
+.gameWindow h2, .gameWindow h3 {
+	text-align: center;
+}
+.gameWindow input, label {
+	cursor: pointer;
+}
+.gameWindow p {
+	text-align: center;
+	cursor: pointer;
+}
+#waitNumber {
+color: #FFFFFF;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+/* -------- Stats -------- */
+#statsContainer {
+	position: static;
+}
+
+#statsContainer table {
+	border-spacing: 0;
+	font-size: inherit;
+	color: #FFFFFF;
+}
+
+#statsContainer table td {
+	margin: 0;
+	padding: 0;
+}
+
+/* -------- Loading -------- */
+
+#loading {
+	text-align: center;
+	margin-top: 180px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#imgPreload {
+	display: none;
+}
+#input {
+	
+	 position: fixed;
+	 bottom:	30px;
+	left: 50%;
+	margin-left: -100px;
+}
+
+
+/* -------- Settings -------- */
+
+
+
+
+
+/* -------- Positioning and Layers -------- */
+
+#board, #board div, #board img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.block {
+	z-index: 4;
+}
+#board {
+	z-index: 2;
+	display: none;
+}
+.boardAnimation {
+	z-index: 6;
+}
+#gameBackground {
+	z-index: 0;
+}
+#quickStats {
+	z-index: 2;
+}
+#rotation {
+	z-index: 4;
+}
+
+.gameWindow {
+	z-index: 10;
+	display:none;
+}

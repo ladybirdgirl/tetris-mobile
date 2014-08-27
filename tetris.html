@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Tetrisish </title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<script type="text/javascript">
+window.addEventListener('load', function() {
+    setTimeout(scrollTo, 0, 0, 1);
+}, false);
+</script>
+<script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="sha-1.js"></script>
+<script type="text/javascript" src="tetris.js"></script>
+<script type="application/javascript" src="jquery.touchToClick.js"></script>
+<script type="application/javascript" src="fastclick.js"></script>
+<script type="application/javascript">
+	window.addEventListener('load', function() {
+		new FastClick(document.body);
+		Array.prototype.forEach.call(document.getElementsByClassName('button'), function(button) {
+			button.addEventListener('click', function(event) {
+				console.log(event.target.nodeName + ' was tapped (forwarded: ' + (event.forwardedTouchEvent ? 'yes' : 'no') + ')');
+			}, false);
+		});
+	}, false);
+</script>
+<link rel="stylesheet" type="text/css" href="tetris.css" />
+</head>
+<body>
+
+<!-- --------- Board -------- -->
+
+<div id="board">
+
+	<img src="img/gameBackground.jpg" id="gameBackground"  />
+	
+	<!-- --------- Board Windows -------- -->
+	
+	<div id="gameOver" class="gameWindow"><h2>[Restart]</h2>
+		<p id="restart">[Click here to Restart...]</p>
+	
+	</div>
+	
+
+	
+	<div id="start" class="gameWindow"><h2>[Start menu]</h2>
+		<p id="start">[Click here to Start]</p>
+	
+	</div>
+
+	<div id="wait" class="gameWindow"><h2>[Waiting...]</h2>
+		<h2>Waiting Number</h2>
+		<h2><span id="waitNumber"></span> </h2>
+	
+	</div>
+	<div id="fight" class="gameWindow"><h2>[Fight Mode]</h2>
+	<h2>Fight Ready..</h2>
+	
+	</div>
+
+	<div id="win" class="gameWindow"><h2>[You Win!]</h2>
+	
+	
+	</div>
+	<div id="lose" class="gameWindow"><h2>[You Lose!]</h2>
+	
+	
+	</div>
+	
+	<div id="rejoin" class="gameWindow"><h2>[You Lose!]</h2>
+		<p id="rejoin">[Click here to rejoin]</p>
+	
+	</div>
+	
+	<div id="pause" class="gameWindow"><h2>[Paused]</h2>
+	<p class="showStats">[click here to view stats]</p>
+	<p style="cursor: none;">Press esc to return to game.</p>
+	</div>
+	
+	
+	
+	<div id="fullStats" class="gameWindow">
+		<h2>Stats</h2>
+		<p class="showStats">[click here to go back]</p>
+		<div id="statsContainer" style="position: static;"></div>
+	</div>
+	
+	<div id="quickStats">
+		Level: <span id="currentLevel"></span><br />
+		Next: <span id="toNextLevel"></span><br />
+		Lines: <span id="totalLines"></span><br />
+		Score:<br /> <span id="totalScore"></span><br /><br />
+		Time: <span id="gameTime">0:00:00</span>
+	</div>
+	
+	<div id="rotation" >
+		Rotation<br/>
+		<input type="radio" name="currentRotation" value='ccw' checked="checked">Left
+		<br/>
+		<input type="radio" name="currentRotation" value='cw'>Right
+	
+
+	</div>
+	
+	
+</div>
+	
+<!-- --------- Loading -------- -->
+<div id="loading">
+	<h1>..Loading..</h1>
+	<img src="img/loading.gif" />
+	
+</div>
+	<div id="input" >
+
+		
+		<input type="image" src="img/hold.png" OnClick="input_hold();"width="60px" height="60px" />
+		<input type="image" src="img/up.png" OnClick="input_up();"width="60px" height="60px" />
+		<input type="image" src="img/space.png" OnClick="input_space();"width="60px" height="60px" />
+		<br/>
+		<input type="image" src="img/left.png" OnClick="input_left();" width="60px" height="60px" />
+		<input type="image" src="img/down.png" OnClick="input_down();"width="60px" height="60px" />
+		<input type="image" src="img/right.png" OnClick="input_right();" width="60px" height="60px" />
+	
+	</div>
+
+</body>
+</html>
